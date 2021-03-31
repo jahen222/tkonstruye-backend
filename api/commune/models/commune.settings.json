@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "communes",
+  "info": {
+    "name": "Commune",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "city": {
+      "model": "province",
+      "via": "communes"
+    },
+    "users": {
+      "via": "commune",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
