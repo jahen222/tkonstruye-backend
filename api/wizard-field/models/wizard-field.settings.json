@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "wizar_fields",
+  "collectionName": "wizard_fields",
   "info": {
-    "name": "WizardField",
-    "description": ""
+    "name": "WizardField"
   },
   "options": {
     "increments": true,
@@ -18,22 +17,28 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "string",
+        "text",
         "number",
-        "float",
-        "boolean",
-        "select"
+        "select",
+        "radio",
+        "checkbox"
       ],
       "required": true
     },
-    "isSelect": {
-      "type": "json"
+    "isNumberMin": {
+      "type": "integer"
     },
     "isNumberMax": {
       "type": "integer"
     },
-    "isNumberMin": {
-      "type": "integer"
+    "isSelect": {
+      "type": "json"
+    },
+    "isRadio": {
+      "type": "json"
+    },
+    "isCheckbox": {
+      "type": "json"
     },
     "isRequired": {
       "type": "boolean",
@@ -42,7 +47,7 @@
     },
     "subcategories": {
       "collection": "subcategory",
-      "via": "wizar_fields",
+      "via": "wizard_fields",
       "dominant": true
     }
   }

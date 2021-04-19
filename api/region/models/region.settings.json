@@ -18,9 +18,9 @@
       "model": "country",
       "via": "regions"
     },
-    "provinces": {
+    "cities": {
       "via": "region",
-      "collection": "province"
+      "collection": "city"
     }
   }
 }

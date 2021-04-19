@@ -542,7 +542,7 @@
                 "country": {
                   "type": "string"
                 },
-                "provinces": {
+                "cities": {
                   "type": "array",
                   "items": {
                     "type": "string"

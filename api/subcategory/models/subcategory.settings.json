@@ -18,9 +18,9 @@
       "model": "category",
       "via": "subcategories"
     },
-    "wizar_fields": {
+    "wizard_fields": {
       "via": "subcategories",
-      "collection": "wizar-field"
+      "collection": "wizard-field"
     }
   }
 }

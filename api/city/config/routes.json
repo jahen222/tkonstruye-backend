@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/provinces",
-      "handler": "province.find",
+      "path": "/cities",
+      "handler": "city.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/provinces/count",
-      "handler": "province.count",
+      "path": "/cities/count",
+      "handler": "city.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/provinces/:id",
-      "handler": "province.findOne",
+      "path": "/cities/:id",
+      "handler": "city.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/provinces",
-      "handler": "province.create",
+      "path": "/cities",
+      "handler": "city.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/provinces/:id",
-      "handler": "province.update",
+      "path": "/cities/:id",
+      "handler": "city.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/provinces/:id",
-      "handler": "province.delete",
+      "path": "/cities/:id",
+      "handler": "city.delete",
       "config": {
         "policies": []
       }

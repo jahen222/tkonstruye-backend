@@ -526,37 +526,6 @@
             "type": "string",
             "maxLength": 32
           },
-          "city": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "region": {
-                "type": "string"
-              },
-              "communes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "users": {
             "type": "array",
             "items": {
@@ -629,6 +598,37 @@
               }
             }
           },
+          "city": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string"
+              },
+              "communes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -641,14 +641,14 @@
             "type": "string",
             "maxLength": 32
           },
-          "city": {
-            "type": "string"
-          },
           "users": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "city": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

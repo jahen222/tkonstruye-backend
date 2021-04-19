@@ -555,7 +555,7 @@
               }
             }
           },
-          "wizar_fields": {
+          "wizard_fields": {
             "type": "array",
             "items": {
               "required": [
@@ -574,14 +574,20 @@
                 "type": {
                   "type": "string"
                 },
-                "isSelect": {
-                  "type": "object"
+                "isNumberMin": {
+                  "type": "integer"
                 },
                 "isNumberMax": {
                   "type": "integer"
                 },
-                "isNumberMin": {
-                  "type": "integer"
+                "isSelect": {
+                  "type": "object"
+                },
+                "isRadio": {
+                  "type": "object"
+                },
+                "isCheckbox": {
+                  "type": "object"
                 },
                 "isRequired": {
                   "type": "boolean"
@@ -621,7 +627,7 @@
           "category": {
             "type": "string"
           },
-          "wizar_fields": {
+          "wizard_fields": {
             "type": "array",
             "items": {
               "type": "string"

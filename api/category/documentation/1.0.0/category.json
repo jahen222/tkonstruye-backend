@@ -543,7 +543,7 @@
                 "category": {
                   "type": "string"
                 },
-                "wizar_fields": {
+                "wizard_fields": {
                   "type": "array",
                   "items": {
                     "type": "string"

@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "CIty",
+  "collectionName": "cities",
   "info": {
-    "name": "City",
-    "description": ""
+    "name": "City"
   },
   "options": {
     "increments": true,
@@ -12,16 +11,15 @@
   },
   "attributes": {
     "name": {
-      "type": "string",
-      "maxLength": 32
+      "type": "string"
     },
     "region": {
       "model": "region",
-      "via": "provinces"
+      "via": "cities"
     },
     "communes": {
-      "via": "city",
-      "collection": "commune"
+      "collection": "commune",
+      "via": "city"
     }
   }
 }

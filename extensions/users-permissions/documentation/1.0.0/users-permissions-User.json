@@ -1353,14 +1353,14 @@
               "name": {
                 "type": "string"
               },
-              "city": {
-                "type": "string"
-              },
               "users": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "city": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"

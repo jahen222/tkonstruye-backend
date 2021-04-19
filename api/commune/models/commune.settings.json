@@ -15,14 +15,14 @@
       "type": "string",
       "maxLength": 32
     },
-    "city": {
-      "model": "province",
-      "via": "communes"
-    },
     "users": {
       "via": "commune",
       "plugin": "users-permissions",
       "collection": "user"
+    },
+    "city": {
+      "via": "communes",
+      "model": "city"
     }
   }
 }

@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/wizar-fields",
-      "handler": "wizar-field.find",
+      "path": "/wizard-fields",
+      "handler": "wizard-field.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/wizar-fields/count",
-      "handler": "wizar-field.count",
+      "path": "/wizard-fields/count",
+      "handler": "wizard-field.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/wizar-fields/:id",
-      "handler": "wizar-field.findOne",
+      "path": "/wizard-fields/:id",
+      "handler": "wizard-field.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/wizar-fields",
-      "handler": "wizar-field.create",
+      "path": "/wizard-fields",
+      "handler": "wizard-field.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/wizar-fields/:id",
-      "handler": "wizar-field.update",
+      "path": "/wizard-fields/:id",
+      "handler": "wizard-field.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/wizar-fields/:id",
-      "handler": "wizar-field.delete",
+      "path": "/wizard-fields/:id",
+      "handler": "wizard-field.delete",
       "config": {
         "policies": []
       }

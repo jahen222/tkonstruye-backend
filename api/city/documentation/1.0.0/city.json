@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/wizar-fields": {
+    "/cities": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/City"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/City"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWizar-field"
+                "$ref": "#/components/schemas/NewCity"
               }
             }
           }
         }
       }
     },
-    "/wizar-fields/count": {
+    "/cities/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "parameters": []
       }
     },
-    "/wizar-fields/{id}": {
+    "/cities/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -326,11 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/City"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "parameters": [
           {
@@ -392,11 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/City"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWizar-field"
+                "$ref": "#/components/schemas/NewCity"
               }
             }
           }
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Wizar-field"
+          "City"
         ],
         "parameters": [
           {
@@ -527,49 +514,53 @@
   },
   "components": {
     "schemas": {
-      "Wizar-field": {
+      "City": {
         "required": [
-          "id",
-          "label",
-          "type",
-          "isRequired"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "label": {
+          "name": {
             "type": "string"
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "string",
-              "number",
-              "float",
-              "boolean",
-              "select"
-            ]
+          "region": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "cities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
-          "isSelect": {
-            "type": "object"
-          },
-          "isNumberMax": {
-            "type": "integer"
-          },
-          "isNumberMin": {
-            "type": "integer"
-          },
-          "isRequired": {
-            "type": "boolean",
-            "default": false
-          },
-          "subcategories": {
+          "communes": {
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "name"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -578,14 +569,14 @@
                 "name": {
                   "type": "string"
                 },
-                "category": {
-                  "type": "string"
-                },
-                "wizar_fields": {
+                "users": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
+                },
+                "city": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -605,40 +596,15 @@
           }
         }
       },
-      "NewWizar-field": {
-        "required": [
-          "label",
-          "type",
-          "isRequired"
-        ],
+      "NewCity": {
         "properties": {
-          "label": {
+          "name": {
             "type": "string"
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "string",
-              "number",
-              "float",
-              "boolean",
-              "select"
-            ]
+          "region": {
+            "type": "string"
           },
-          "isSelect": {
-            "type": "object"
-          },
-          "isNumberMax": {
-            "type": "integer"
-          },
-          "isNumberMin": {
-            "type": "integer"
-          },
-          "isRequired": {
-            "type": "boolean",
-            "default": false
-          },
-          "subcategories": {
+          "communes": {
             "type": "array",
             "items": {
               "type": "string"
@@ -658,5 +624,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "City"
+    }
+  ]
 }

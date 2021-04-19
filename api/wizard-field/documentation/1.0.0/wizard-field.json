@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/provinces": {
+    "/wizard-fields": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Province"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Province"
+          "Wizard-field"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Province"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Province"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewProvince"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/provinces/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Province"
+          "Wizard-field"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewWizard-field"
+              }
+            }
+          }
+        }
       }
     },
-    "/provinces/{id}": {
+    "/wizard-fields/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Province"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Province"
+          "Wizard-field"
+        ],
+        "parameters": []
+      }
+    },
+    "/wizard-fields/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Wizard-field"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Province"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Province"
+          "Wizard-field"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProvince"
+                "$ref": "#/components/schemas/NewWizard-field"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Province"
+          "Wizard-field"
         ],
         "parameters": [
           {
@@ -514,54 +527,55 @@
   },
   "components": {
     "schemas": {
-      "Province": {
+      "Wizard-field": {
         "required": [
-          "id"
+          "id",
+          "label",
+          "type",
+          "isRequired"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "label": {
+            "type": "string"
+          },
+          "type": {
             "type": "string",
-            "maxLength": 32
+            "enum": [
+              "text",
+              "number",
+              "select",
+              "radio",
+              "checkbox"
+            ]
           },
-          "region": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "country": {
-                "type": "string"
-              },
-              "provinces": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "isNumberMin": {
+            "type": "integer"
           },
-          "communes": {
+          "isNumberMax": {
+            "type": "integer"
+          },
+          "isSelect": {
+            "type": "object"
+          },
+          "isRadio": {
+            "type": "object"
+          },
+          "isCheckbox": {
+            "type": "object"
+          },
+          "isRequired": {
+            "type": "boolean",
+            "default": false
+          },
+          "subcategories": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "name"
               ],
               "properties": {
                 "id": {
@@ -570,10 +584,10 @@
                 "name": {
                   "type": "string"
                 },
-                "city": {
+                "category": {
                   "type": "string"
                 },
-                "users": {
+                "wizard_fields": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -597,16 +611,46 @@
           }
         }
       },
-      "NewProvince": {
+      "NewWizard-field": {
+        "required": [
+          "label",
+          "type",
+          "isRequired"
+        ],
         "properties": {
-          "name": {
-            "type": "string",
-            "maxLength": 32
-          },
-          "region": {
+          "label": {
             "type": "string"
           },
-          "communes": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "number",
+              "select",
+              "radio",
+              "checkbox"
+            ]
+          },
+          "isNumberMin": {
+            "type": "integer"
+          },
+          "isNumberMax": {
+            "type": "integer"
+          },
+          "isSelect": {
+            "type": "object"
+          },
+          "isRadio": {
+            "type": "object"
+          },
+          "isCheckbox": {
+            "type": "object"
+          },
+          "isRequired": {
+            "type": "boolean",
+            "default": false
+          },
+          "subcategories": {
             "type": "array",
             "items": {
               "type": "string"
@@ -626,9 +670,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Province"
-    }
-  ]
+  "tags": []
 }
