@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcategories",
+  "info": {
+    "name": "Subcategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "model": "category",
+      "via": "subcategories"
+    },
+    "wizar_fields": {
+      "via": "subcategories",
+      "collection": "wizar-field"
+    }
+  }
+}

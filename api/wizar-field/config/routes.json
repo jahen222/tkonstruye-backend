@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wizar-fields",
+      "handler": "wizar-field.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wizar-fields/count",
+      "handler": "wizar-field.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wizar-fields/:id",
+      "handler": "wizar-field.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wizar-fields",
+      "handler": "wizar-field.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/wizar-fields/:id",
+      "handler": "wizar-field.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/wizar-fields/:id",
+      "handler": "wizar-field.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
