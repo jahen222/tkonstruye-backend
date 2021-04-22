@@ -548,7 +548,8 @@
               "number",
               "select",
               "radio",
-              "checkbox"
+              "checkbox",
+              "textarea"
             ]
           },
           "isNumberMin": {
@@ -593,6 +594,12 @@
                     "type": "string"
                   }
                 },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -604,6 +611,9 @@
                 }
               }
             }
+          },
+          "isTextLength": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -628,7 +638,8 @@
               "number",
               "select",
               "radio",
-              "checkbox"
+              "checkbox",
+              "textarea"
             ]
           },
           "isNumberMin": {
@@ -655,6 +666,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "isTextLength": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

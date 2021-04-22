@@ -15,12 +15,16 @@
       "required": true
     },
     "category": {
-      "model": "category",
-      "via": "subcategories"
+      "via": "subcategories",
+      "model": "category"
     },
     "wizard_fields": {
       "via": "subcategories",
       "collection": "wizard-field"
+    },
+    "tickets": {
+      "via": "subcategory",
+      "collection": "ticket"
     }
   }
 }

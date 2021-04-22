@@ -585,6 +585,12 @@
                 "commune": {
                   "type": "string"
                 },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

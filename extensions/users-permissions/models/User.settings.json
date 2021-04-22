@@ -97,6 +97,10 @@
     "commune": {
       "model": "commune",
       "via": "users"
+    },
+    "tickets": {
+      "via": "users_permissions_user",
+      "collection": "ticket"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/subcategories": {
+    "/tickets": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Subcategory"
+                    "$ref": "#/components/schemas/Ticket"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Ticket"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubcategory"
+                "$ref": "#/components/schemas/NewTicket"
               }
             }
           }
         }
       }
     },
-    "/subcategories/count": {
+    "/tickets/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "parameters": []
       }
     },
-    "/subcategories/{id}": {
+    "/tickets/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Ticket"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Ticket"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubcategory"
+                "$ref": "#/components/schemas/NewTicket"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Ticket"
         ],
         "parameters": [
           {
@@ -514,19 +514,15 @@
   },
   "components": {
     "schemas": {
-      "Subcategory": {
+      "Ticket": {
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "category": {
+          "subcategory": {
             "required": [
               "id",
               "name"
@@ -538,7 +534,16 @@
               "name": {
                 "type": "string"
               },
-              "subcategories": {
+              "category": {
+                "type": "string"
+              },
+              "wizard_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tickets": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -555,95 +560,118 @@
               }
             }
           },
-          "wizard_fields": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "label",
-                "type",
-                "isRequired"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "isNumberMin": {
-                  "type": "integer"
-                },
-                "isNumberMax": {
-                  "type": "integer"
-                },
-                "isSelect": {
-                  "type": "object"
-                },
-                "isRadio": {
-                  "type": "object"
-                },
-                "isCheckbox": {
-                  "type": "object"
-                },
-                "isRequired": {
-                  "type": "boolean"
-                },
-                "subcategories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "isTextLength": {
-                  "type": "integer"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rut": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "giro": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "photo": {
+                "type": "string"
+              },
+              "commune": {
+                "type": "string"
+              },
+              "tickets": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "tickets": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "subcategory": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "requirements": {
-                  "type": "object"
-                },
-                "commune": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "requirements": {
+            "type": "object"
+          },
+          "commune": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "city": {
+                "type": "string"
+              },
+              "tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -653,28 +681,19 @@
           }
         }
       },
-      "NewSubcategory": {
-        "required": [
-          "name"
-        ],
+      "NewTicket": {
         "properties": {
-          "name": {
+          "subcategory": {
             "type": "string"
           },
-          "category": {
+          "users_permissions_user": {
             "type": "string"
           },
-          "wizard_fields": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "requirements": {
+            "type": "object"
           },
-          "tickets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "commune": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -692,7 +711,7 @@
   },
   "tags": [
     {
-      "name": "Subcategory"
+      "name": "Ticket"
     }
   ]
 }

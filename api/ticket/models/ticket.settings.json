@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "name": "Ticket"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subcategory": {
+      "model": "subcategory",
+      "via": "tickets"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "tickets"
+    },
+    "requirements": {
+      "type": "json"
+    },
+    "commune": {
+      "model": "commune",
+      "via": "tickets"
+    }
+  }
+}

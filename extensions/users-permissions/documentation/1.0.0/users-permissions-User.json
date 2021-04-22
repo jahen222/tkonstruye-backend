@@ -1362,6 +1362,12 @@
               "city": {
                 "type": "string"
               },
+              "tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -1370,6 +1376,40 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "tickets": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "subcategory": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "requirements": {
+                  "type": "object"
+                },
+                "commune": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1440,6 +1480,12 @@
           },
           "commune": {
             "type": "string"
+          },
+          "tickets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

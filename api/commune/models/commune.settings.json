@@ -23,6 +23,10 @@
     "city": {
       "via": "communes",
       "model": "city"
+    },
+    "tickets": {
+      "via": "commune",
+      "collection": "ticket"
     }
   }
 }
