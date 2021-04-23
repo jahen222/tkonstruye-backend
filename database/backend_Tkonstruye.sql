@@ -440,7 +440,7 @@ CREATE TABLE `tickets` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -449,6 +449,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
+INSERT INTO `tickets` VALUES (1,2,34,NULL,1,'2021-04-23 01:23:49',1,1,'2021-04-23 05:23:44','2021-04-23 05:23:49'),(2,2,34,'{\"¡probando campo texto!\":\"asdasd\",\"¡probando campo number!\":\"5\"}',2,'2021-04-23 01:37:36',NULL,NULL,'2021-04-23 05:37:36','2021-04-23 05:37:36'),(3,2,34,'{\"¡probando campo texto!\":\"asdasd\",\"¡probando campo number!\":\"5\"}',2,'2021-04-23 01:41:37',NULL,NULL,'2021-04-23 05:41:37','2021-04-23 05:41:37'),(4,2,34,'{\"¡probando campo texto!\":\"asdasd\",\"¡probando campo number!\":\"5\"}',2,'2021-04-23 01:43:05',NULL,NULL,'2021-04-23 05:43:06','2021-04-23 05:43:06'),(5,3,33,'{\"probando textarea\":\"es aqui la respuesta debe ser aceptada\"}',2,'2021-04-23 02:09:26',NULL,NULL,'2021-04-23 06:09:26','2021-04-23 06:09:26'),(6,3,33,'{\"probando textarea\":\"es aqui la respuesta debe ser aceptada\"}',2,'2021-04-23 02:10:42',NULL,NULL,'2021-04-23 06:10:42','2021-04-23 06:10:42'),(7,3,33,'{\"probando textarea\":\"es aqui la respuesta debe ser aceptada\"}',2,'2021-04-23 02:12:03',NULL,NULL,'2021-04-23 06:12:03','2021-04-23 06:12:03'),(8,3,33,'{\"probando textarea\":\"es aqui la respuesta debe ser aceptada\"}',2,'2021-04-23 02:14:01',NULL,NULL,'2021-04-23 06:14:01','2021-04-23 06:14:02');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -673,4 +674,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-22  1:26:15
+-- Dump completed on 2021-04-22 22:18:47
