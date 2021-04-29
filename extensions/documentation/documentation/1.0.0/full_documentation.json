@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/27/2021 6:56:17 PM"
+    "x-generation-date": "04/28/2021 8:02:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8080,23 +8080,25 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 10
+            "maxLength": 12,
+            "minLength": 11
           },
           "phone": {
             "type": "string",
-            "maxLength": 16
+            "maxLength": 13,
+            "minLength": 13
           },
           "giro": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "contact": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "slogan": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 128
           },
           "photo": {
             "required": [
@@ -8283,23 +8285,25 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 10
+            "maxLength": 12,
+            "minLength": 11
           },
           "phone": {
             "type": "string",
-            "maxLength": 16
+            "maxLength": 13,
+            "minLength": 13
           },
           "giro": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "contact": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "slogan": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 128
           },
           "commune": {
             "type": "string"

@@ -15,9 +15,9 @@
       "via": "tickets"
     },
     "users_permissions_user": {
+      "via": "tickets",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "tickets"
+      "model": "user"
     },
     "requirements": {
       "type": "json"

@@ -1257,23 +1257,25 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 10
+            "maxLength": 12,
+            "minLength": 11
           },
           "phone": {
             "type": "string",
-            "maxLength": 16
+            "maxLength": 13,
+            "minLength": 13
           },
           "giro": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "contact": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "slogan": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 128
           },
           "photo": {
             "required": [
@@ -1460,23 +1462,25 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 10
+            "maxLength": 12,
+            "minLength": 11
           },
           "phone": {
             "type": "string",
-            "maxLength": 16
+            "maxLength": 13,
+            "minLength": 13
           },
           "giro": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "contact": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 512
           },
           "slogan": {
             "type": "string",
-            "maxLength": 200
+            "maxLength": 128
           },
           "commune": {
             "type": "string"

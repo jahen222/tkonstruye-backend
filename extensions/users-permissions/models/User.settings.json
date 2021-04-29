@@ -65,31 +65,31 @@
     },
     "rut": {
       "type": "string",
-      "maxLength": 10
+      "maxLength": 12,
+      "minLength": 11
     },
     "phone": {
       "type": "string",
-      "maxLength": 16
+      "maxLength": 13,
+      "minLength": 13
     },
     "giro": {
       "type": "text",
-      "maxLength": 200
+      "maxLength": 512
     },
     "contact": {
       "type": "text",
-      "maxLength": 200
+      "maxLength": 512
     },
     "slogan": {
       "type": "text",
-      "maxLength": 200
+      "maxLength": 128
     },
     "photo": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ],
       "plugin": "upload",
       "required": false
@@ -99,8 +99,8 @@
       "via": "users"
     },
     "tickets": {
-      "via": "users_permissions_user",
-      "collection": "ticket"
+      "collection": "ticket",
+      "via": "users_permissions_user"
     }
   }
 }

@@ -7,7 +7,16 @@ module.exports = {
           "isAuthenticated", 
           "isOwner"
         ],
-      },
+      }
     },
+    Mutation: {
+      deleteTicket: {
+        description: "Delete Ticket",
+        policies: [
+          "isAuthenticated", 
+          "isOwner"
+        ],
+      }
+    }
   },
 };
