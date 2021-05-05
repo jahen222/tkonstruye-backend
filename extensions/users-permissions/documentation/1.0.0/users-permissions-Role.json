@@ -591,6 +591,12 @@
                     "type": "string"
                   }
                 },
+                "subcategories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

@@ -549,6 +549,12 @@
                   "type": "string"
                 }
               },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -622,6 +628,12 @@
                 "type": "string"
               },
               "tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "subcategories": {
                 "type": "array",
                 "items": {
                   "type": "string"

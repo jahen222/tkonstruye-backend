@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/28/2021 8:02:02 PM"
+    "x-generation-date": "05/04/2021 11:43:12 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6595,6 +6595,12 @@
                     "type": "string"
                   }
                 },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -6829,6 +6835,12 @@
                   "type": "string"
                 },
                 "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subcategories": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -7443,6 +7455,90 @@
               }
             }
           },
+          "users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "rut": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "giro": {
+                  "type": "string"
+                },
+                "contact": {
+                  "type": "string"
+                },
+                "slogan": {
+                  "type": "string"
+                },
+                "photo": {
+                  "type": "string"
+                },
+                "commune": {
+                  "type": "string"
+                },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subcategories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7467,6 +7563,12 @@
             }
           },
           "tickets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users": {
             "type": "array",
             "items": {
               "type": "string"
@@ -7514,6 +7616,12 @@
                 }
               },
               "tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -7592,6 +7700,12 @@
                 "type": "string"
               },
               "tickets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "subcategories": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -7745,6 +7859,12 @@
                   }
                 },
                 "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "users": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -7956,6 +8076,12 @@
                   "type": "string"
                 },
                 "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subcategories": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -8237,6 +8363,53 @@
                 }
               }
             }
+          },
+          "subcategories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "wizard_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -8309,6 +8482,12 @@
             "type": "string"
           },
           "tickets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "subcategories": {
             "type": "array",
             "items": {
               "type": "string"

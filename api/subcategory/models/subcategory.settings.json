@@ -25,6 +25,11 @@
     "tickets": {
       "via": "subcategory",
       "collection": "ticket"
+    },
+    "users": {
+      "via": "subcategories",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

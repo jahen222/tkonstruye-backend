@@ -101,6 +101,11 @@
     "tickets": {
       "collection": "ticket",
       "via": "users_permissions_user"
+    },
+    "subcategories": {
+      "collection": "subcategory",
+      "via": "users",
+      "dominant": true
     }
   }
 }
