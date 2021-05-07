@@ -687,6 +687,9 @@
               }
             }
           },
+          "description": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -705,6 +708,9 @@
             "type": "object"
           },
           "commune": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "published_at": {

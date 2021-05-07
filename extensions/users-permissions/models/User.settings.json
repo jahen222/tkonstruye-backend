@@ -99,8 +99,8 @@
       "via": "users"
     },
     "tickets": {
-      "collection": "ticket",
-      "via": "users_permissions_user"
+      "via": "users_permissions_user",
+      "collection": "ticket"
     },
     "subcategories": {
       "collection": "subcategory",

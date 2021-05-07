@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "tickets",
   "info": {
-    "name": "Ticket"
+    "name": "Ticket",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,9 +16,9 @@
       "via": "tickets"
     },
     "users_permissions_user": {
-      "via": "tickets",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "tickets"
     },
     "requirements": {
       "type": "json"
@@ -25,6 +26,9 @@
     "commune": {
       "model": "commune",
       "via": "tickets"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
