@@ -1385,7 +1385,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "status"
               ],
               "properties": {
                 "id": {
@@ -1404,6 +1405,9 @@
                   "type": "string"
                 },
                 "description": {
+                  "type": "string"
+                },
+                "status": {
                   "type": "string"
                 },
                 "published_at": {

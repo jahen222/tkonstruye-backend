@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/06/2021 4:00:18 PM"
+    "x-generation-date": "05/12/2021 12:10:32 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6890,7 +6890,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "status"
               ],
               "properties": {
                 "id": {
@@ -6909,6 +6910,9 @@
                   "type": "string"
                 },
                 "description": {
+                  "type": "string"
+                },
+                "status": {
                   "type": "string"
                 },
                 "published_at": {
@@ -7428,7 +7432,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "status"
               ],
               "properties": {
                 "id": {
@@ -7447,6 +7452,9 @@
                   "type": "string"
                 },
                 "description": {
+                  "type": "string"
+                },
+                "status": {
                   "type": "string"
                 },
                 "published_at": {
@@ -7594,7 +7602,8 @@
       },
       "Ticket": {
         "required": [
-          "id"
+          "id",
+          "status"
         ],
         "properties": {
           "id": {
@@ -7768,6 +7777,16 @@
           "description": {
             "type": "string"
           },
+          "status": {
+            "type": "string",
+            "default": "Publicado",
+            "enum": [
+              "Publicado",
+              "Propuesta",
+              "Contrato",
+              "Completado"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7775,6 +7794,9 @@
         }
       },
       "NewTicket": {
+        "required": [
+          "status"
+        ],
         "properties": {
           "subcategory": {
             "type": "string"
@@ -7790,6 +7812,16 @@
           },
           "description": {
             "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "default": "Publicado",
+            "enum": [
+              "Publicado",
+              "Propuesta",
+              "Contrato",
+              "Completado"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -8346,7 +8378,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "status"
               ],
               "properties": {
                 "id": {
@@ -8365,6 +8398,9 @@
                   "type": "string"
                 },
                 "description": {
+                  "type": "string"
+                },
+                "status": {
                   "type": "string"
                 },
                 "published_at": {

@@ -516,7 +516,8 @@
     "schemas": {
       "Ticket": {
         "required": [
-          "id"
+          "id",
+          "status"
         ],
         "properties": {
           "id": {
@@ -690,6 +691,16 @@
           "description": {
             "type": "string"
           },
+          "status": {
+            "type": "string",
+            "default": "Publicado",
+            "enum": [
+              "Publicado",
+              "Propuesta",
+              "Contrato",
+              "Completado"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -697,6 +708,9 @@
         }
       },
       "NewTicket": {
+        "required": [
+          "status"
+        ],
         "properties": {
           "subcategory": {
             "type": "string"
@@ -712,6 +726,16 @@
           },
           "description": {
             "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "default": "Publicado",
+            "enum": [
+              "Publicado",
+              "Propuesta",
+              "Contrato",
+              "Completado"
+            ]
           },
           "published_at": {
             "type": "string",

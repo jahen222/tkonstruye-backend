@@ -29,6 +29,17 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Publicado",
+        "Propuesta",
+        "Contrato",
+        "Completado"
+      ],
+      "default": "Publicado",
+      "required": true
     }
   }
 }
