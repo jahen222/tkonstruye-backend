@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "name": "Proposal"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ticket": {
+      "model": "ticket",
+      "via": "proposals"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "proposals"
+    },
+    "coverLetter": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 500
+    },
+    "jobDetail": {
+      "type": "richtext",
+      "maxLength": 500
+    }
+  }
+}

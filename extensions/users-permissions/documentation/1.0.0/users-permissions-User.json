@@ -1410,6 +1410,12 @@
                 "status": {
                   "type": "string"
                 },
+                "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1456,6 +1462,41 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "proposals": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "coverLetter"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "ticket": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "coverLetter": {
+                  "type": "string"
+                },
+                "jobDetail": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -1546,6 +1587,12 @@
             }
           },
           "subcategories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proposals": {
             "type": "array",
             "items": {
               "type": "string"

@@ -601,6 +601,12 @@
                     "type": "string"
                   }
                 },
+                "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -669,6 +675,12 @@
                 },
                 "status": {
                   "type": "string"
+                },
+                "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"

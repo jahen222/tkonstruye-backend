@@ -40,6 +40,10 @@
       ],
       "default": "Publicado",
       "required": true
+    },
+    "proposals": {
+      "via": "ticket",
+      "collection": "proposal"
     }
   }
 }

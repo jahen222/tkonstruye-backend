@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/subcategories": {
+    "/proposals": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Subcategory"
+                    "$ref": "#/components/schemas/Proposal"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Proposal"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubcategory"
+                "$ref": "#/components/schemas/NewProposal"
               }
             }
           }
         }
       }
     },
-    "/subcategories/count": {
+    "/proposals/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "parameters": []
       }
     },
-    "/subcategories/{id}": {
+    "/proposals/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Proposal"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subcategory"
+                  "$ref": "#/components/schemas/Proposal"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubcategory"
+                "$ref": "#/components/schemas/NewProposal"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Subcategory"
+          "Proposal"
         ],
         "parameters": [
           {
@@ -514,31 +514,43 @@
   },
   "components": {
     "schemas": {
-      "Subcategory": {
+      "Proposal": {
         "required": [
           "id",
-          "name"
+          "coverLetter"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "category": {
+          "ticket": {
             "required": [
               "id",
-              "name"
+              "status"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "subcategory": {
                 "type": "string"
               },
-              "subcategories": {
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "requirements": {
+                "type": "object"
+              },
+              "commune": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "proposals": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -555,200 +567,100 @@
               }
             }
           },
-          "wizard_fields": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "label",
-                "type",
-                "isRequired"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "isNumberMin": {
-                  "type": "integer"
-                },
-                "isNumberMax": {
-                  "type": "integer"
-                },
-                "isSelect": {
-                  "type": "object"
-                },
-                "isRadio": {
-                  "type": "object"
-                },
-                "isCheckbox": {
-                  "type": "object"
-                },
-                "isRequired": {
-                  "type": "boolean"
-                },
-                "subcategories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "isTextLength": {
-                  "type": "integer"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rut": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "giro": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "photo": {
+                "type": "string"
+              },
+              "commune": {
+                "type": "string"
+              },
+              "tickets": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "subcategories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "proposals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "tickets": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "status"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "subcategory": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "requirements": {
-                  "type": "object"
-                },
-                "commune": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "proposals": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "coverLetter": {
+            "type": "string",
+            "maxLength": 500
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "rut": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "giro": {
-                  "type": "string"
-                },
-                "contact": {
-                  "type": "string"
-                },
-                "slogan": {
-                  "type": "string"
-                },
-                "photo": {
-                  "type": "string"
-                },
-                "commune": {
-                  "type": "string"
-                },
-                "tickets": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "subcategories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "proposals": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "jobDetail": {
+            "type": "string",
+            "maxLength": 500
           },
           "published_at": {
             "type": "string",
@@ -756,34 +668,24 @@
           }
         }
       },
-      "NewSubcategory": {
+      "NewProposal": {
         "required": [
-          "name"
+          "coverLetter"
         ],
         "properties": {
-          "name": {
+          "ticket": {
             "type": "string"
           },
-          "category": {
+          "users_permissions_user": {
             "type": "string"
           },
-          "wizard_fields": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "coverLetter": {
+            "type": "string",
+            "maxLength": 500
           },
-          "tickets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "jobDetail": {
+            "type": "string",
+            "maxLength": 500
           },
           "published_at": {
             "type": "string",
@@ -801,7 +703,7 @@
   },
   "tags": [
     {
-      "name": "Subcategory"
+      "name": "Proposal"
     }
   ]
 }

@@ -106,6 +106,10 @@
       "collection": "subcategory",
       "via": "users",
       "dominant": true
+    },
+    "proposals": {
+      "via": "users_permissions_user",
+      "collection": "proposal"
     }
   }
 }
