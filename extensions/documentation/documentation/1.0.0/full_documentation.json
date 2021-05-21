@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/12/2021 11:56:27 PM"
+    "x-generation-date": "05/20/2021 4:09:41 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7082,7 +7082,8 @@
             "items": {
               "required": [
                 "id",
-                "name"
+                "name",
+                "price"
               ],
               "properties": {
                 "id": {
@@ -7111,6 +7112,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "price": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"
@@ -8040,7 +8044,8 @@
       "Subcategory": {
         "required": [
           "id",
-          "name"
+          "name",
+          "price"
         ],
         "properties": {
           "id": {
@@ -8273,6 +8278,10 @@
               }
             }
           },
+          "price": {
+            "type": "number",
+            "default": 0
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8281,7 +8290,8 @@
       },
       "NewSubcategory": {
         "required": [
-          "name"
+          "name",
+          "price"
         ],
         "properties": {
           "name": {
@@ -8308,6 +8318,10 @@
               "type": "string"
             }
           },
+          "price": {
+            "type": "number",
+            "default": 0
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8332,7 +8346,8 @@
           "subcategory": {
             "required": [
               "id",
-              "name"
+              "name",
+              "price"
             ],
             "properties": {
               "id": {
@@ -8361,6 +8376,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "price": {
+                "type": "number"
               },
               "published_at": {
                 "type": "string"
@@ -8651,7 +8669,8 @@
             "items": {
               "required": [
                 "id",
-                "name"
+                "name",
+                "price"
               ],
               "properties": {
                 "id": {
@@ -8680,6 +8699,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "price": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"
@@ -9199,7 +9221,8 @@
             "items": {
               "required": [
                 "id",
-                "name"
+                "name",
+                "price"
               ],
               "properties": {
                 "id": {
@@ -9228,6 +9251,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "price": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"

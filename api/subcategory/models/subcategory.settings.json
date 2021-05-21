@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "subcategories",
   "info": {
-    "name": "Subcategory"
+    "name": "Subcategory",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,21 +16,26 @@
       "required": true
     },
     "category": {
-      "via": "subcategories",
-      "model": "category"
+      "model": "category",
+      "via": "subcategories"
     },
     "wizard_fields": {
-      "via": "subcategories",
-      "collection": "wizard-field"
+      "collection": "wizard-field",
+      "via": "subcategories"
     },
     "tickets": {
-      "via": "subcategory",
-      "collection": "ticket"
+      "collection": "ticket",
+      "via": "subcategory"
     },
     "users": {
-      "via": "subcategories",
       "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "user",
+      "via": "subcategories"
+    },
+    "price": {
+      "type": "float",
+      "required": true,
+      "default": 0
     }
   }
 }

@@ -12,8 +12,8 @@
   },
   "attributes": {
     "subcategory": {
-      "model": "subcategory",
-      "via": "tickets"
+      "via": "tickets",
+      "model": "subcategory"
     },
     "users_permissions_user": {
       "plugin": "users-permissions",

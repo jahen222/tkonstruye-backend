@@ -526,7 +526,8 @@
           "subcategory": {
             "required": [
               "id",
-              "name"
+              "name",
+              "price"
             ],
             "properties": {
               "id": {
@@ -555,6 +556,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "price": {
+                "type": "number"
               },
               "published_at": {
                 "type": "string"

@@ -48,8 +48,8 @@
       "required": true
     },
     "subcategories": {
-      "collection": "subcategory",
       "via": "wizard_fields",
+      "collection": "subcategory",
       "dominant": true
     },
     "isTextLength": {

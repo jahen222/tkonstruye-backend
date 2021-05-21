@@ -103,8 +103,8 @@
       "collection": "ticket"
     },
     "subcategories": {
-      "collection": "subcategory",
       "via": "users",
+      "collection": "subcategory",
       "dominant": true
     },
     "proposals": {
