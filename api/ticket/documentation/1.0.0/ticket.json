@@ -734,6 +734,9 @@
                 "jobDetail": {
                   "type": "string"
                 },
+                "file": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "proposals",
   "info": {
-    "name": "Proposal"
+    "name": "Proposal",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -22,11 +23,22 @@
     "coverLetter": {
       "type": "richtext",
       "required": true,
-      "maxLength": 500
+      "maxLength": 512
     },
     "jobDetail": {
       "type": "richtext",
       "maxLength": 500
+    },
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

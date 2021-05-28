@@ -461,6 +461,9 @@
           "address": {
             "type": "string"
           },
+          "vulgarity": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -477,6 +480,9 @@
           },
           "address": {
             "type": "string"
+          },
+          "vulgarity": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",
