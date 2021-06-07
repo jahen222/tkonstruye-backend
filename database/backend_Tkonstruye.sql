@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.33, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.34, for Linux (x86_64)
 --
 -- Host: localhost    Database: backend_Tkonstruye
 -- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.18.04.1
+-- Server version	5.7.34-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -214,7 +214,7 @@ CREATE TABLE `proposals` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,7 +223,7 @@ CREATE TABLE `proposals` (
 
 LOCK TABLES `proposals` WRITE;
 /*!40000 ALTER TABLE `proposals` DISABLE KEYS */;
-INSERT INTO `proposals` VALUES (18,10009,48,'asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas  ','asdasdas asdasdas asdasdas asdasdas ','2021-05-28 03:20:49',NULL,NULL,'2021-05-28 07:20:49','2021-05-28 07:20:49');
+INSERT INTO `proposals` VALUES (18,10009,48,'asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas  ','asdasdas asdasdas asdasdas asdasdas ','2021-05-28 03:20:49',NULL,NULL,'2021-05-28 07:20:49','2021-05-28 07:20:49'),(19,10008,48,'adsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasd adsasdasdadsasdasdadsasdasdadsasdasdadsasdasd adsasdasdadsasdasd','adsasdasdadsasdasdadsasdasdadsasdasd adsasdasdadsasdasdadsasdasd','2021-06-04 02:42:49',NULL,NULL,'2021-06-04 06:42:49','2021-06-04 06:42:49'),(20,10007,48,'adsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad as','adsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad asadsdas asd asd aas dasda ad as','2021-06-04 02:43:59',NULL,NULL,'2021-06-04 06:43:59','2021-06-04 06:43:59');
 /*!40000 ALTER TABLE `proposals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -503,7 +503,7 @@ CREATE TABLE `tickets` (
   `description` longtext,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10011 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10012 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -512,7 +512,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (10004,3,46,'{\"probando textarea\":\"adasdsa\"}',1,'2021-05-17 20:32:36',NULL,NULL,'2021-05-18 00:32:36','2021-05-18 00:32:36','adasdasdadasd','Publicado'),(10005,1,46,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',2,'2021-05-17 20:34:41',NULL,NULL,'2021-05-18 00:34:41','2021-05-18 00:34:41','asdasdasd','Publicado'),(10006,1,47,'{\"¿De cuántos metros quieres la casa?\":\"No lo sé\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',2,'2021-05-17 20:37:26',NULL,NULL,'2021-05-18 00:37:26','2021-05-18 00:37:26','asdasd','Publicado'),(10007,1,47,'{\"¿De cuántos metros quieres la casa?\":\"Entre 71 y 100 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',1,'2021-05-19 02:15:06',NULL,NULL,'2021-05-19 06:15:06','2021-05-19 06:15:06','asdasd','Publicado'),(10008,2,47,'{\"¡probando campo texto!\":\"asdasd\",\"¡probando campo number!\":\"7\"}',2,'2021-05-19 02:19:13',NULL,NULL,'2021-05-19 06:19:13','2021-05-19 06:19:13','asdasd','Publicado'),(10009,1,47,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"3\",\"campo de prueba marco\":\"option 1\"}',2,'2021-05-27 16:39:03',NULL,NULL,'2021-05-27 20:39:03','2021-05-27 20:39:03','hola mundo','Publicado'),(10010,1,48,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',1,'2021-05-27 22:53:32',NULL,NULL,'2021-05-28 02:53:32','2021-05-28 02:53:32','hola mundo','Publicado');
+INSERT INTO `tickets` VALUES (10004,3,46,'{\"probando textarea\":\"adasdsa\"}',1,'2021-05-17 20:32:36',NULL,NULL,'2021-05-18 00:32:36','2021-05-18 00:32:36','adasdasdadasd','Publicado'),(10005,1,46,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',2,'2021-05-17 20:34:41',NULL,NULL,'2021-05-18 00:34:41','2021-05-18 00:34:41','asdasdasd','Publicado'),(10006,1,47,'{\"¿De cuántos metros quieres la casa?\":\"No lo sé\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',2,'2021-05-17 20:37:26',NULL,NULL,'2021-05-18 00:37:26','2021-05-18 00:37:26','asdasd','Publicado'),(10007,1,47,'{\"¿De cuántos metros quieres la casa?\":\"Entre 71 y 100 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',1,'2021-05-19 02:15:06',NULL,NULL,'2021-05-19 06:15:06','2021-05-19 06:15:06','asdasd','Publicado'),(10008,2,47,'{\"¡probando campo texto!\":\"asdasd\",\"¡probando campo number!\":\"7\"}',2,'2021-05-19 02:19:13',NULL,NULL,'2021-05-19 06:19:13','2021-05-19 06:19:13','asdasd','Publicado'),(10009,1,47,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"3\",\"campo de prueba marco\":\"option 1\"}',2,'2021-05-27 16:39:03',NULL,NULL,'2021-05-27 20:39:03','2021-05-27 20:39:03','hola mundo','Publicado'),(10010,1,48,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"2\",\"campo de prueba marco\":\"option 2\"}',1,'2021-05-27 22:53:32',NULL,NULL,'2021-05-28 02:53:32','2021-05-28 02:53:32','hola mundo','Publicado'),(10011,1,48,'{\"¿De cuántos metros quieres la casa?\":\"Entre 51 y 70 m2\",\"¿Cuántas habitaciones?\":\"3\",\"campo de prueba marco\":\"option 2\"}',1,'2021-06-04 02:22:33',NULL,NULL,'2021-06-04 06:22:33','2021-06-04 06:22:33','adfaf','Publicado');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -687,7 +687,7 @@ CREATE TABLE `users-permissions_user` (
 
 LOCK TABLES `users-permissions_user` WRITE;
 /*!40000 ALTER TABLE `users-permissions_user` DISABLE KEYS */;
-INSERT INTO `users-permissions_user` VALUES (46,'cliente1','cliente1@gmail.com','local','$2a$10$eTmnzbUJArwtlawPlnRrLuEjN7VXKQzdeUJ3ctngfwB7z6NP0a/fi',NULL,NULL,NULL,NULL,1,NULL,NULL,'2021-05-18 00:31:25','2021-05-19 00:31:59','(2) 2315-5255','',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(47,'Dorwan','henryjaimes.peli@gmail.com','local','$2a$10$O3sivjwVV69cQuTVK7RQEeXL4dTBhjxhcWKmfhsIc6BYHfXbter8i',NULL,NULL,NULL,NULL,1,NULL,NULL,'2021-05-18 00:36:24','2021-05-19 03:01:57','(4) 1277-3897','','',NULL,NULL,NULL,NULL,NULL,NULL),(48,'profesional1','profesional1@gmail.com','local','$2a$10$vDobwJmjaKuZFyYsBozOo.MC3lVdSaAAvdwKI8iPe4omqD9DpJkWC',NULL,NULL,NULL,NULL,3,NULL,NULL,'2021-05-18 00:38:53','2021-05-27 06:04:12','(9) 9356-1223',NULL,'sapo','','y flores como esas grandes solo hay aqui ','ejeler pedazo de porqueria ',NULL,NULL,NULL),(49,'profesional2','profesional2@gmail.com','local','$2a$10$OKDBGBSyb/Gx8eo8tUTfk./bIRd27EeMSVBSp9HIWyJQ/0EB.sS62',NULL,NULL,NULL,NULL,3,NULL,NULL,'2021-05-18 01:30:04','2021-05-18 01:30:04','(2) 5455-5656',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `users-permissions_user` VALUES (46,'cliente1','cliente1@gmail.com','local','$2a$10$eTmnzbUJArwtlawPlnRrLuEjN7VXKQzdeUJ3ctngfwB7z6NP0a/fi',NULL,NULL,NULL,NULL,1,NULL,NULL,'2021-05-18 00:31:25','2021-05-19 00:31:59','(2) 2315-5255','',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(47,'Dorwan','henryjaimes.peli@gmail.com','local','$2a$10$O3sivjwVV69cQuTVK7RQEeXL4dTBhjxhcWKmfhsIc6BYHfXbter8i',NULL,NULL,NULL,NULL,1,NULL,NULL,'2021-05-18 00:36:24','2021-05-19 03:01:57','(4) 1277-3897','','',NULL,NULL,NULL,NULL,NULL,NULL),(48,'profesional1','profesional1@gmail.com','local','$2a$10$vDobwJmjaKuZFyYsBozOo.MC3lVdSaAAvdwKI8iPe4omqD9DpJkWC',NULL,NULL,NULL,NULL,3,NULL,NULL,'2021-05-18 00:38:53','2021-06-03 07:14:45','(9) 9356-1223',NULL,'sapo','','y flores como esas grandes solo hay aqui ','ejeler pedazo de blablablka ',NULL,NULL,NULL),(49,'profesional2','profesional2@gmail.com','local','$2a$10$OKDBGBSyb/Gx8eo8tUTfk./bIRd27EeMSVBSp9HIWyJQ/0EB.sS62',NULL,NULL,NULL,NULL,3,NULL,NULL,'2021-05-18 01:30:04','2021-05-18 01:30:04','(2) 5455-5656',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users-permissions_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -737,4 +737,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-28  1:01:27
+-- Dump completed on 2021-06-07 19:02:55
