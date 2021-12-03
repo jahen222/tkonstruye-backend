@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/tickets": {
+    "/cards": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Ticket"
+                    "$ref": "#/components/schemas/Card"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Card"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTicket"
+                "$ref": "#/components/schemas/NewCard"
               }
             }
           }
         }
       }
     },
-    "/tickets/count": {
+    "/cards/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "parameters": []
       }
     },
-    "/tickets/{id}": {
+    "/cards/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Card"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Card"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTicket"
+                "$ref": "#/components/schemas/NewCard"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Card"
         ],
         "parameters": [
           {
@@ -514,62 +514,42 @@
   },
   "components": {
     "schemas": {
-      "Ticket": {
+      "Card": {
         "required": [
           "id",
-          "status"
+          "firstname",
+          "lastname",
+          "cardNumber",
+          "expirationMonth",
+          "expirationYear",
+          "cvv",
+          "zip",
+          "type"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "subcategory": {
-            "required": [
-              "id",
-              "name",
-              "price"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "wizard_fields": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "price": {
-                "type": "number"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "cardNumber": {
+            "type": "string"
+          },
+          "expirationMonth": {
+            "type": "integer"
+          },
+          "expirationYear": {
+            "type": "integer"
+          },
+          "cvv": {
+            "type": "integer"
+          },
+          "zip": {
+            "type": "string"
           },
           "users_permissions_user": {
             "required": [
@@ -664,100 +644,8 @@
               }
             }
           },
-          "requirements": {
-            "type": "object"
-          },
-          "commune": {
-            "required": [
-              "id",
-              "map"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "city": {
-                "type": "string"
-              },
-              "tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "map": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "description": {
+          "type": {
             "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "default": "Publicado",
-            "enum": [
-              "Publicado",
-              "Propuesta",
-              "Contrato",
-              "Completado"
-            ]
-          },
-          "proposals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "coverLetter"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "ticket": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "coverLetter": {
-                  "type": "string"
-                },
-                "jobDetail": {
-                  "type": "string"
-                },
-                "file": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -765,41 +653,44 @@
           }
         }
       },
-      "NewTicket": {
+      "NewCard": {
         "required": [
-          "status"
+          "firstname",
+          "lastname",
+          "cardNumber",
+          "expirationMonth",
+          "expirationYear",
+          "cvv",
+          "zip",
+          "type"
         ],
         "properties": {
-          "subcategory": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "cardNumber": {
+            "type": "string"
+          },
+          "expirationMonth": {
+            "type": "integer"
+          },
+          "expirationYear": {
+            "type": "integer"
+          },
+          "cvv": {
+            "type": "integer"
+          },
+          "zip": {
             "type": "string"
           },
           "users_permissions_user": {
             "type": "string"
           },
-          "requirements": {
-            "type": "object"
-          },
-          "commune": {
+          "type": {
             "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "default": "Publicado",
-            "enum": [
-              "Publicado",
-              "Propuesta",
-              "Contrato",
-              "Completado"
-            ]
-          },
-          "proposals": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -817,7 +708,7 @@
   },
   "tags": [
     {
-      "name": "Ticket"
+      "name": "Card"
     }
   ]
 }

@@ -560,7 +560,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "map"
               ],
               "properties": {
                 "id": {
@@ -583,6 +584,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "map": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"

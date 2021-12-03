@@ -18,8 +18,8 @@
       "via": "cities"
     },
     "communes": {
-      "collection": "commune",
-      "via": "city"
+      "via": "city",
+      "collection": "commune"
     }
   }
 }

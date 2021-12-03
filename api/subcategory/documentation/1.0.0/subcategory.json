@@ -742,6 +742,12 @@
                     "type": "string"
                   }
                 },
+                "cards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

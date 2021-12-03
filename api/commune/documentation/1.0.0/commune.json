@@ -516,7 +516,8 @@
     "schemas": {
       "Commune": {
         "required": [
-          "id"
+          "id",
+          "map"
         ],
         "properties": {
           "id": {
@@ -602,6 +603,12 @@
                   }
                 },
                 "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cards": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -694,6 +701,9 @@
               }
             }
           },
+          "map": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -701,6 +711,9 @@
         }
       },
       "NewCommune": {
+        "required": [
+          "map"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -720,6 +733,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "map": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

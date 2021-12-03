@@ -24,8 +24,8 @@
       "type": "json"
     },
     "commune": {
-      "model": "commune",
-      "via": "tickets"
+      "via": "tickets",
+      "model": "commune"
     },
     "description": {
       "type": "richtext"

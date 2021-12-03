@@ -95,8 +95,8 @@
       "required": false
     },
     "commune": {
-      "model": "commune",
-      "via": "users"
+      "via": "users",
+      "model": "commune"
     },
     "tickets": {
       "via": "users_permissions_user",
@@ -110,6 +110,10 @@
     "proposals": {
       "via": "users_permissions_user",
       "collection": "proposal"
+    },
+    "cards": {
+      "via": "users_permissions_user",
+      "collection": "card"
     }
   }
 }

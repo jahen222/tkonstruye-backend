@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/tickets": {
+    "/subscriptions": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the subscriptions's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve subscriptions document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Ticket"
+                    "$ref": "#/components/schemas/Subscriptions"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new subscriptions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve subscriptions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Subscriptions"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTicket"
+                "$ref": "#/components/schemas/NewSubscriptions"
               }
             }
           }
         }
       }
     },
-    "/tickets/count": {
+    "/subscriptions/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of subscriptions documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve subscriptions document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "parameters": []
       }
     },
-    "/tickets/{id}": {
+    "/subscriptions/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one subscriptions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve subscriptions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Subscriptions"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single subscriptions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve subscriptions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Ticket"
+                  "$ref": "#/components/schemas/Subscriptions"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTicket"
+                "$ref": "#/components/schemas/NewSubscriptions"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single subscriptions record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single subscriptions based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Ticket"
+          "Subscriptions"
         ],
         "parameters": [
           {
@@ -514,250 +514,32 @@
   },
   "components": {
     "schemas": {
-      "Ticket": {
+      "Subscriptions": {
         "required": [
           "id",
-          "status"
+          "name",
+          "description",
+          "price",
+          "discount"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "subcategory": {
-            "required": [
-              "id",
-              "name",
-              "price"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "wizard_fields": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "price": {
-                "type": "number"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "users_permissions_user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "rut": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "giro": {
-                "type": "string"
-              },
-              "contact": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "photo": {
-                "type": "string"
-              },
-              "commune": {
-                "type": "string"
-              },
-              "tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subcategories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "proposals": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "cards": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "requirements": {
-            "type": "object"
-          },
-          "commune": {
-            "required": [
-              "id",
-              "map"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "city": {
-                "type": "string"
-              },
-              "tickets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "map": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "name": {
+            "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "default": "Publicado",
-            "enum": [
-              "Publicado",
-              "Propuesta",
-              "Contrato",
-              "Completado"
-            ]
+          "price": {
+            "type": "number"
           },
-          "proposals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "coverLetter"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "ticket": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "coverLetter": {
-                  "type": "string"
-                },
-                "jobDetail": {
-                  "type": "string"
-                },
-                "file": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "discount": {
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -765,41 +547,28 @@
           }
         }
       },
-      "NewTicket": {
+      "NewSubscriptions": {
         "required": [
-          "status"
+          "name",
+          "description",
+          "price",
+          "discount"
         ],
         "properties": {
-          "subcategory": {
-            "type": "string"
-          },
-          "users_permissions_user": {
-            "type": "string"
-          },
-          "requirements": {
-            "type": "object"
-          },
-          "commune": {
+          "name": {
             "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "default": "Publicado",
-            "enum": [
-              "Publicado",
-              "Propuesta",
-              "Contrato",
-              "Completado"
-            ]
+          "price": {
+            "type": "number"
           },
-          "proposals": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "discount": {
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -817,7 +586,7 @@
   },
   "tags": [
     {
-      "name": "Ticket"
+      "name": "Subscriptions"
     }
   ]
 }

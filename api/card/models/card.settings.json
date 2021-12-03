@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "name": "Card",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "cardNumber": {
+      "type": "string",
+      "required": true
+    },
+    "expirationMonth": {
+      "type": "integer",
+      "required": true
+    },
+    "expirationYear": {
+      "type": "integer",
+      "required": true
+    },
+    "cvv": {
+      "type": "integer",
+      "required": true
+    },
+    "zip": {
+      "type": "string",
+      "required": true
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "cards"
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

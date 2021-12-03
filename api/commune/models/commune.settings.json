@@ -16,17 +16,21 @@
       "maxLength": 32
     },
     "users": {
-      "via": "commune",
       "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "user",
+      "via": "commune"
     },
     "city": {
-      "via": "communes",
-      "model": "city"
+      "model": "city",
+      "via": "communes"
     },
     "tickets": {
-      "via": "commune",
-      "collection": "ticket"
+      "collection": "ticket",
+      "via": "commune"
+    },
+    "map": {
+      "type": "text",
+      "required": true
     }
   }
 }

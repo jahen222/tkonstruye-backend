@@ -1346,7 +1346,8 @@
           },
           "commune": {
             "required": [
-              "id"
+              "id",
+              "map"
             ],
             "properties": {
               "id": {
@@ -1369,6 +1370,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "map": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -1516,6 +1520,63 @@
                 }
               }
             }
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "firstname",
+                "lastname",
+                "cardNumber",
+                "expirationMonth",
+                "expirationYear",
+                "cvv",
+                "zip",
+                "type"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "firstname": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "cardNumber": {
+                  "type": "string"
+                },
+                "expirationMonth": {
+                  "type": "integer"
+                },
+                "expirationYear": {
+                  "type": "integer"
+                },
+                "cvv": {
+                  "type": "integer"
+                },
+                "zip": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1600,6 +1661,12 @@
             }
           },
           "proposals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cards": {
             "type": "array",
             "items": {
               "type": "string"
