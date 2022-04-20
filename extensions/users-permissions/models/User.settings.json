@@ -65,8 +65,7 @@
     },
     "rut": {
       "type": "string",
-      "maxLength": 12,
-      "minLength": 11
+      "maxLength": 12
     },
     "phone": {
       "type": "string",
@@ -95,25 +94,31 @@
       "required": false
     },
     "commune": {
-      "via": "users",
-      "model": "commune"
+      "model": "commune",
+      "via": "users"
     },
     "tickets": {
-      "via": "users_permissions_user",
-      "collection": "ticket"
+      "collection": "ticket",
+      "via": "users_permissions_user"
     },
     "subcategories": {
-      "via": "users",
       "collection": "subcategory",
+      "via": "users",
       "dominant": true
     },
     "proposals": {
-      "via": "users_permissions_user",
-      "collection": "proposal"
+      "collection": "proposal",
+      "via": "users_permissions_user"
     },
     "cards": {
-      "via": "users_permissions_user",
-      "collection": "card"
+      "collection": "card",
+      "via": "users_permissions_user"
+    },
+    "balance": {
+      "type": "float",
+      "required": true,
+      "min": 0,
+      "default": 0
     }
   }
 }

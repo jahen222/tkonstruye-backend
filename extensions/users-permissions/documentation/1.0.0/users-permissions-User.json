@@ -1188,7 +1188,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "balance"
         ],
         "properties": {
           "id": {
@@ -1257,8 +1258,7 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 12,
-            "minLength": 11
+            "maxLength": 12
           },
           "phone": {
             "type": "string",
@@ -1577,13 +1577,18 @@
                 }
               }
             }
+          },
+          "balance": {
+            "type": "number",
+            "default": 0
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "balance"
         ],
         "properties": {
           "username": {
@@ -1625,8 +1630,7 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 12,
-            "minLength": 11
+            "maxLength": 12
           },
           "phone": {
             "type": "string",
@@ -1671,6 +1675,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "balance": {
+            "type": "number",
+            "default": 0
           },
           "created_by": {
             "type": "string"

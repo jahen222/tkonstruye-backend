@@ -16,9 +16,9 @@
       "via": "proposals"
     },
     "users_permissions_user": {
+      "via": "proposals",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "proposals"
+      "model": "user"
     },
     "coverLetter": {
       "type": "richtext",

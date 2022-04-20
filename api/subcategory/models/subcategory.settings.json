@@ -28,9 +28,9 @@
       "via": "subcategory"
     },
     "users": {
+      "via": "subcategories",
       "plugin": "users-permissions",
-      "collection": "user",
-      "via": "subcategories"
+      "collection": "user"
     },
     "price": {
       "type": "float",

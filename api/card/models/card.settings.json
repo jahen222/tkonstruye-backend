@@ -40,9 +40,9 @@
       "required": true
     },
     "users_permissions_user": {
+      "via": "cards",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "cards"
+      "model": "user"
     },
     "type": {
       "type": "string",

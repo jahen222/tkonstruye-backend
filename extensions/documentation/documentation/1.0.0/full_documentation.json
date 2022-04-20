@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/03/2021 1:49:48 PM"
+    "x-generation-date": "04/19/2022 10:59:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8128,7 +8128,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "balance"
             ],
             "properties": {
               "id": {
@@ -8208,6 +8209,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "balance": {
+                "type": "number"
               },
               "created_by": {
                 "type": "string"
@@ -8509,7 +8513,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "balance"
               ],
               "properties": {
                 "id": {
@@ -8589,6 +8594,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "balance": {
+                  "type": "number"
                 },
                 "created_by": {
                   "type": "string"
@@ -9044,7 +9052,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "balance"
             ],
             "properties": {
               "id": {
@@ -9124,6 +9133,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "balance": {
+                "type": "number"
               },
               "created_by": {
                 "type": "string"
@@ -9505,7 +9517,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "balance"
               ],
               "properties": {
                 "id": {
@@ -9585,6 +9598,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "balance": {
+                  "type": "number"
                 },
                 "created_by": {
                   "type": "string"
@@ -9780,7 +9796,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "balance"
             ],
             "properties": {
               "id": {
@@ -9860,6 +9877,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "balance": {
+                "type": "number"
               },
               "created_by": {
                 "type": "string"
@@ -10249,7 +10269,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "balance"
               ],
               "properties": {
                 "id": {
@@ -10330,6 +10351,9 @@
                     "type": "string"
                   }
                 },
+                "balance": {
+                  "type": "number"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -10380,7 +10404,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "balance"
         ],
         "properties": {
           "id": {
@@ -10449,8 +10474,7 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 12,
-            "minLength": 11
+            "maxLength": 12
           },
           "phone": {
             "type": "string",
@@ -10769,13 +10793,18 @@
                 }
               }
             }
+          },
+          "balance": {
+            "type": "number",
+            "default": 0
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "balance"
         ],
         "properties": {
           "username": {
@@ -10817,8 +10846,7 @@
           },
           "rut": {
             "type": "string",
-            "maxLength": 12,
-            "minLength": 11
+            "maxLength": 12
           },
           "phone": {
             "type": "string",
@@ -10863,6 +10891,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "balance": {
+            "type": "number",
+            "default": 0
           },
           "created_by": {
             "type": "string"

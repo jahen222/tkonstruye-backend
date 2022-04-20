@@ -16,9 +16,9 @@
       "maxLength": 32
     },
     "users": {
+      "via": "commune",
       "plugin": "users-permissions",
-      "collection": "user",
-      "via": "commune"
+      "collection": "user"
     },
     "city": {
       "model": "city",

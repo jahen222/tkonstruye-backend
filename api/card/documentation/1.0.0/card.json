@@ -555,7 +555,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "balance"
             ],
             "properties": {
               "id": {
@@ -635,6 +636,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "balance": {
+                "type": "number"
               },
               "created_by": {
                 "type": "string"
