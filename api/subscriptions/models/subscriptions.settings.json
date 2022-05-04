@@ -30,6 +30,11 @@
     },
     "icon": {
       "type": "string"
+    },
+    "users": {
+      "via": "subscription",
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

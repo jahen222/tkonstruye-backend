@@ -1581,6 +1581,50 @@
           "balance": {
             "type": "number",
             "default": 0
+          },
+          "subscription": {
+            "required": [
+              "id",
+              "name",
+              "description",
+              "price",
+              "discount"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "discount": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1679,6 +1723,9 @@
           "balance": {
             "type": "number",
             "default": 0
+          },
+          "subscription": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

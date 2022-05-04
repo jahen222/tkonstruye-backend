@@ -656,6 +656,9 @@
               "balance": {
                 "type": "number"
               },
+              "subscription": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

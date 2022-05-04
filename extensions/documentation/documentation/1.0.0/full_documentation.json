@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/19/2022 10:59:02 PM"
+    "x-generation-date": "05/03/2022 11:34:56 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2905,6 +2905,63 @@
             }
           }
         ]
+      }
+    },
+    "/helpers": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Helpers"
+        ],
+        "parameters": []
       }
     },
     "/proposals": {
@@ -8213,6 +8270,9 @@
               "balance": {
                 "type": "number"
               },
+              "subscription": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8597,6 +8657,9 @@
                 },
                 "balance": {
                   "type": "number"
+                },
+                "subscription": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -9137,6 +9200,9 @@
               "balance": {
                 "type": "number"
               },
+              "subscription": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -9602,6 +9668,9 @@
                 "balance": {
                   "type": "number"
                 },
+                "subscription": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -9694,6 +9763,109 @@
           "icon": {
             "type": "string"
           },
+          "users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email",
+                "balance"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "rut": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "giro": {
+                  "type": "string"
+                },
+                "contact": {
+                  "type": "string"
+                },
+                "slogan": {
+                  "type": "string"
+                },
+                "photo": {
+                  "type": "string"
+                },
+                "commune": {
+                  "type": "string"
+                },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subcategories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "balance": {
+                  "type": "number"
+                },
+                "subscription": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9722,6 +9894,12 @@
           },
           "icon": {
             "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -9880,6 +10058,9 @@
               },
               "balance": {
                 "type": "number"
+              },
+              "subscription": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -10354,6 +10535,9 @@
                 "balance": {
                   "type": "number"
                 },
+                "subscription": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -10797,6 +10981,50 @@
           "balance": {
             "type": "number",
             "default": 0
+          },
+          "subscription": {
+            "required": [
+              "id",
+              "name",
+              "description",
+              "price",
+              "discount"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "discount": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -10896,6 +11124,9 @@
             "type": "number",
             "default": 0
           },
+          "subscription": {
+            "type": "string"
+          },
           "created_by": {
             "type": "string"
           },
@@ -10946,6 +11177,9 @@
     },
     {
       "name": "Country"
+    },
+    {
+      "name": "Helpers"
     },
     {
       "name": "Proposal"

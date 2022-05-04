@@ -119,6 +119,10 @@
       "required": true,
       "min": 0,
       "default": 0
+    },
+    "subscription": {
+      "model": "subscriptions",
+      "via": "users"
     }
   }
 }

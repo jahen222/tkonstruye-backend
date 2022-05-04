@@ -541,6 +541,109 @@
           "icon": {
             "type": "string"
           },
+          "users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email",
+                "balance"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "rut": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "giro": {
+                  "type": "string"
+                },
+                "contact": {
+                  "type": "string"
+                },
+                "slogan": {
+                  "type": "string"
+                },
+                "photo": {
+                  "type": "string"
+                },
+                "commune": {
+                  "type": "string"
+                },
+                "tickets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subcategories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "proposals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "balance": {
+                  "type": "number"
+                },
+                "subscription": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -569,6 +672,12 @@
           },
           "icon": {
             "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
