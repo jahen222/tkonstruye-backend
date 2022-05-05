@@ -4,10 +4,6 @@
  * A set of functions called "actions" for `helpers`
  */
 
-const handleErrors = (ctx, err = undefined, type) => {
-  throw strapi.errors[type](err);
-};
-
 module.exports = {
   async setSubscriptionToUser(ctx) {
     let user = ctx.state.user
@@ -25,9 +21,7 @@ module.exports = {
 
     }
     else {
-      //console.log(ctx.badRequest('Sin saldo suficiente.', { foo: 'bar' }))
       return ctx.throw(400, 'Sin saldo suficiente.')
-      //return ctx.badRequest('Sin saldo suficiente.', { foo: 'bar' });
     }
   },
 };
