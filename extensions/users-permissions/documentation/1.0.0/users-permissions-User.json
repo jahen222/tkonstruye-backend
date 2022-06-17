@@ -1630,9 +1630,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "coverLetter",
-                "jobDetail"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -1675,6 +1673,9 @@
                   "type": "number"
                 },
                 "ticket": {
+                  "type": "string"
+                },
+                "subscription": {
                   "type": "string"
                 },
                 "published_at": {

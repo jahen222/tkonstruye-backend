@@ -5,8 +5,7 @@ const handleErrors = (ctx, err = undefined, type) => {
 };
 
 module.exports = async (ctx, next) => {
-  console.log(ctx.params)
-  if (ctx.state.user.id == ctx.params.id) {
+  if (ctx.state.user.id == ctx.query._userId) {
 
     return await next();
   }

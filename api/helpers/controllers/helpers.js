@@ -1,27 +1,20 @@
 'use strict';
 
 /**
- * A set of functions called "actions" for `helpers`
+ * Read the documentation (https://strapi.io/documentation/developer-docs/latest/concepts/controllers.html#core-controllers)
+ * to customize this controller
  */
+//const { isDraft } = require('strapi-utils').contentTypes;
 
 module.exports = {
-  async setSubscriptionToUser(ctx) {
-    let user = ctx.state.user
-    const subscriptionId = ctx.request.body.subscriptionId
-    const subscription = await strapi.query('subscriptions').findOne({ id: subscriptionId })
-
-    if (user.balance >= subscription.price) {
-      const delta = user.balance - subscription.price
-      user = await strapi.query('user', 'users-permissions').update(
-        { id: user.id },
-        { balance: delta, subscription: subscriptionId },
-      )
-
-      return { users_permissions_user: user }
-
+  /* async createUser2(ctx) {
+    const params = ctx.request.body
+    const userData = {
+      balance: 0,
+      ...params
     }
-    else {
-      return ctx.throw(400, 'Sin saldo suficiente.')
-    }
-  },
+    const user = await strapi.query('user', 'users-permissions').create(userData)
+
+    return { users_permissions_user: user }
+  }, */
 };

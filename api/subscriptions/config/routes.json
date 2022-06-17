@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/apiFlow/result_subscription",
+      "handler": "subscriptions.getPaymentSubscriptionWithFlow",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/17/2022 11:11:30 AM"
+    "x-generation-date": "06/17/2022 6:47:55 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2907,77 +2907,6 @@
         ]
       }
     },
-    "/apiFlow/payment_confirm": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Unclassified"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/payments": {
       "get": {
         "deprecated": false,
@@ -3490,6 +3419,77 @@
       }
     },
     "/apiFlow/result": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Payments"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apiFlow/result_balance": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -5602,6 +5602,77 @@
             }
           }
         ]
+      }
+    },
+    "/apiFlow/result_subscription": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Subscriptions"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/tickets": {
@@ -9668,9 +9739,7 @@
       },
       "Payments": {
         "required": [
-          "id",
-          "coverLetter",
-          "jobDetail"
+          "id"
         ],
         "properties": {
           "id": {
@@ -9925,6 +9994,50 @@
               }
             }
           },
+          "subscription": {
+            "required": [
+              "id",
+              "name",
+              "description",
+              "price",
+              "discount"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "discount": {
+                "type": "number"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9932,10 +10045,6 @@
         }
       },
       "NewPayments": {
-        "required": [
-          "coverLetter",
-          "jobDetail"
-        ],
         "properties": {
           "users_permissions_user": {
             "type": "string"
@@ -9973,6 +10082,9 @@
             "type": "number"
           },
           "ticket": {
+            "type": "string"
+          },
+          "subscription": {
             "type": "string"
           },
           "published_at": {
@@ -11989,9 +12101,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "coverLetter",
-                "jobDetail"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -12034,6 +12144,9 @@
                   "type": "number"
                 },
                 "ticket": {
+                  "type": "string"
+                },
+                "subscription": {
                   "type": "string"
                 },
                 "published_at": {
@@ -12205,12 +12318,6 @@
     },
     {
       "name": "Country"
-    },
-    {
-      "name": "Helpers"
-    },
-    {
-      "name": "Unclassified"
     },
     {
       "name": "Payments"

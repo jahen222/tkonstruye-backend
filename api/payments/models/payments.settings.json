@@ -39,20 +39,20 @@
     },
     "coverLetter": {
       "type": "richtext",
-      "required": true,
+      "required": false,
       "maxLength": 512
     },
     "jobDetail": {
       "type": "richtext",
-      "required": true,
+      "required": false,
       "maxLength": 500
     },
     "file": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",
@@ -63,6 +63,9 @@
     },
     "ticket": {
       "model": "ticket"
+    },
+    "subscription": {
+      "model": "subscriptions"
     }
   }
 }

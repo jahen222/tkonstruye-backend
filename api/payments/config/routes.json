@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/apiFlow/result_balance",
+      "handler": "payments.getPaymentBalanceWithFlow",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

@@ -71,4 +71,58 @@ module.exports = {
 
     return ctx.redirect(process.env.VUE_APP_URL + '/finishpay?q=' + data.id);
   },
+  async setPaymentBalanceWithFlow(ctx) {
+    const user = ctx.state.user
+    const FlowApi = require("flowcl-node-api-client");
+    const { config } = require("../../../lib/flow_config");
+    const optional = {
+      "rut": user.rut ? user.rut : "9999999-9",
+    };
+    const params = {
+      "commerceOrder": Math.floor(Math.random() * (2000 - 1100 + 1)) + 1100,
+      "subject": "Pago directo de balance",
+      "currency": "CLP",
+      "amount": ctx.request.body.balance,
+      "email": user.email,
+      "paymentMethod": 9,
+      "urlConfirmation": config.baseBackURL + "/payment_confirm",
+      "urlReturn": config.baseBackURL + "/result_balance",
+    };
+    const serviceName = "payment/create";
+    try {
+      const flowApi = new FlowApi(config);
+      const response = await flowApi.send(serviceName, { ...params, ...optional }, "POST");
+      const redirect = response.url + "?token=" + response.token;
+      const payment = {
+        "token": response.token,
+        "users_permissions_user": user.id,
+        "status": "not payed",
+        ...params
+      }
+      const validData = await strapi.entityValidator.validateEntityCreation(
+        strapi.models.payments,
+        payment,
+        { isDraft: isDraft(payment, strapi.models.payments) }
+      );
+      await strapi.query('payments').create(validData);
+
+      return { redirect: redirect }
+    } catch (error) {
+
+      return ctx.throw(500, error)
+    }
+  },
+  async getPaymentBalanceWithFlow(ctx) {
+    const payment = await strapi.query('payments').findOne({ token: ctx.request.body.token })
+    await strapi.query('payments').update({ id: payment.id }, { status: "payed" })
+
+    const user = await strapi.query('user', 'users-permissions').update(
+      { id: payment.users_permissions_user.id },
+      {
+        balance: payment.users_permissions_user.balance + payment.amount
+      },
+    )
+
+    return ctx.redirect(process.env.VUE_APP_URL + '/finishpaybalance');
+  },
 };
