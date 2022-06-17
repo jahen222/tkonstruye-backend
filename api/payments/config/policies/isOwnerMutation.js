@@ -5,7 +5,7 @@ const handleErrors = (ctx, err = undefined, type) => {
 };
 
 module.exports = async (ctx, next) => {
-  if (ctx.state.user.id == ctx.request.body.users_permissions_user) {
+  if (ctx.state.user.id == ctx.request.body.userId) {
 
     return await next();
   }

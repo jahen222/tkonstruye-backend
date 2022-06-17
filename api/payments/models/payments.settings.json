@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "Payments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "payments"
+    },
+    "email": {
+      "type": "email"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "paymentMethod": {
+      "type": "integer"
+    },
+    "commerceOrder": {
+      "type": "biginteger"
+    },
+    "coverLetter": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 512
+    },
+    "jobDetail": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 500
+    },
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "ticket": {
+      "model": "ticket"
+    }
+  }
+}

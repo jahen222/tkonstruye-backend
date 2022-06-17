@@ -123,6 +123,10 @@
     "subscription": {
       "model": "subscriptions",
       "via": "users"
+    },
+    "payments": {
+      "via": "users_permissions_user",
+      "collection": "payments"
     }
   }
 }

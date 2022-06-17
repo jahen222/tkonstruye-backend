@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/subscriptions": {
+    "/payments": {
       "get": {
         "deprecated": false,
-        "description": "Find all the subscriptions's records",
+        "description": "Find all the payments's records",
         "responses": {
           "200": {
-            "description": "Retrieve subscriptions document(s)",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Subscriptions"
+                    "$ref": "#/components/schemas/Payments"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new subscriptions record",
+        "description": "Create a new payments record",
         "responses": {
           "200": {
-            "description": "Retrieve subscriptions document(s)",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subscriptions"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubscriptions"
+                "$ref": "#/components/schemas/NewPayments"
               }
             }
           }
         }
       }
     },
-    "/subscriptions/count": {
+    "/payments/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of subscriptions documents",
+        "description": "Retrieve the numver of payments documents",
         "responses": {
           "200": {
-            "description": "Retrieve subscriptions document(s)",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "parameters": []
       }
     },
-    "/subscriptions/{id}": {
+    "/payments/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one subscriptions record",
+        "description": "Find one payments record",
         "responses": {
           "200": {
-            "description": "Retrieve subscriptions document(s)",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subscriptions"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single subscriptions record",
+        "description": "Update a single payments record",
         "responses": {
           "200": {
-            "description": "Retrieve subscriptions document(s)",
+            "description": "Retrieve payments document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subscriptions"
+                  "$ref": "#/components/schemas/Payments"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSubscriptions"
+                "$ref": "#/components/schemas/NewPayments"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single subscriptions record",
+        "description": "Delete a single payments record",
         "responses": {
           "200": {
-            "description": "deletes a single subscriptions based on the ID supplied",
+            "description": "deletes a single payments based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Subscriptions"
+          "Payments"
         ],
         "parameters": [
           {
@@ -510,143 +510,337 @@
           }
         ]
       }
+    },
+    "/apiFlow/result": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Payments"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Subscriptions": {
+      "Payments": {
         "required": [
           "id",
-          "name",
-          "description",
-          "price",
-          "discount"
+          "coverLetter",
+          "jobDetail"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "price": {
-            "type": "number"
-          },
-          "discount": {
-            "type": "number"
-          },
-          "icon": {
-            "type": "string"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email",
-                "balance"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "rut": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "giro": {
-                  "type": "string"
-                },
-                "contact": {
-                  "type": "string"
-                },
-                "slogan": {
-                  "type": "string"
-                },
-                "photo": {
-                  "type": "string"
-                },
-                "commune": {
-                  "type": "string"
-                },
-                "tickets": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "subcategories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "proposals": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "cards": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "balance": {
-                  "type": "number"
-                },
-                "subscription": {
-                  "type": "string"
-                },
-                "payments": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "balance"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "rut": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "giro": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "photo": {
+                "type": "string"
+              },
+              "commune": {
+                "type": "string"
+              },
+              "tickets": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "subcategories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "proposals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cards": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "balance": {
+                "type": "number"
+              },
+              "subscription": {
+                "type": "string"
+              },
+              "payments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "email": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "paymentMethod": {
+            "type": "integer"
+          },
+          "commerceOrder": {
+            "type": "integer"
+          },
+          "coverLetter": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "jobDetail": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "file": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "amount": {
+            "type": "number"
+          },
+          "ticket": {
+            "required": [
+              "id",
+              "status"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "subcategory": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "requirements": {
+                "type": "object"
+              },
+              "commune": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "proposals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -656,34 +850,49 @@
           }
         }
       },
-      "NewSubscriptions": {
+      "NewPayments": {
         "required": [
-          "name",
-          "description",
-          "price",
-          "discount"
+          "coverLetter",
+          "jobDetail"
         ],
         "properties": {
-          "name": {
+          "users_permissions_user": {
             "type": "string"
           },
-          "description": {
+          "email": {
             "type": "string"
           },
-          "price": {
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "paymentMethod": {
+            "type": "integer"
+          },
+          "commerceOrder": {
+            "type": "integer"
+          },
+          "coverLetter": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "jobDetail": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "amount": {
             "type": "number"
           },
-          "discount": {
-            "type": "number"
-          },
-          "icon": {
+          "ticket": {
             "type": "string"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -701,7 +910,7 @@
   },
   "tags": [
     {
-      "name": "Subscriptions"
+      "name": "Payments"
     }
   ]
 }

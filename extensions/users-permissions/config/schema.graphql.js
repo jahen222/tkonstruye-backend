@@ -12,7 +12,7 @@ module.exports = {
       updateUser: {
         description: "Update user",
         policies: [
-          "plugins::users-permissions.isAuthenticated",
+          //"plugins::users-permissions.isAuthenticated",
           "plugins::users-permissions.isOwner",
         ],
       },
